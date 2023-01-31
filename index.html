@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Javascript test</title>
+</head>
+
+<body>
+    <div id="frontpage" class="frontpage">
+        <img src="/images/Screenshot 2023-01-26 110942.png" alt="javascript tester">
+        <div id="prevresponse"></div>
+        <button class="teststartbutton" onclick="teststartbutton()" type="button">Start test</button>
+    </div>
+    <div id="quespage" class="invisible">
+        <div id="time" class="invisible"></div>
+        <h3>1. What will be the output of the following code snippet?
+
+            var a = "Scaler";
+            var result = a.substring(2, 4);
+            document.write(result);
+        </h3>
+        <div>
+            <input type="radio" name="size" value=false id="a5">
+            <label for="a5">
+                <p><b>a. </b> calculate by your self, i can't do it</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" name="size" value=false id="b5">
+            <label for="b5">
+                <p><b>b. </b> cal</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" name="size" value=false id="c5">
+            <label for="c5">
+                <p><b>c. </b> ali</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" name="size" value=true id="d5">
+            <label for="d5">
+                <p><b>d. </b> al</p>
+            </label>
+        </div>
+        <p>
+            <button type="button" id="btnsubmit">Final Submit</button>
+        </p>
+    </div>
+    <div id="resultpage" class="invisible">
+        <h1>result page</h1>
+        <img src="/images/Screenshot 2023-01-26 110942.png" alt="javascript tester">
+        <div id="blankmarksheet"></div>
+        <button class="teststartbutton" onclick="retry()" type="button">
+            << Retry</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

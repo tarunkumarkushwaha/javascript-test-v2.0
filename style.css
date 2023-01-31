@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(229, 245, 239);
+    font-family: 'Raleway', sans-serif;
+}
+h1{
+    text-align: center;
+}
+#time{
+    position: fixed;
+    left: 75vw;
+    background-color: rgb(186, 252, 230);
+    color: black;
+    font-weight: bolder;
+    font-size: xx-large
+}
+#prevresponse{
+    position: fixed;
+    bottom: 15vh;
+    left: 32vw;
+    font-weight: bold;
+}
+#fixed{
+    position: fixed;
+    left: 15vw;
+    background-color: rgb(186, 252, 230);
+    color: black;
+    font-weight: bolder;
+    font-size: xx-large
+}
+.frontpage{
+    display: flex;
+    flex-direction: column;
+    margin: 50px 20px 20px 350px;
+    border: 1px solid rgb(255, 252, 252);
+    border-radius: 15px;
+    box-shadow: 0 25px 100px rgb(192, 190, 190);
+    width: 500px;
+    height: 65vh;
+    padding: 65px;
+}
+.invisible{
+    display: none;
+}
+.visible{
+    display: flex;
+    flex-direction: column;
+    margin: 50px 20px 20px 350px;
+    border: 1px solid rgb(255, 252, 252);
+    border-radius: 15px;
+    box-shadow: 0 25px 100px rgb(192, 190, 190);
+    height: 65vh;
+    width: 500px;
+    padding: 65px;
+}
+
+button {
+    cursor: pointer;
+    font-weight: bold;
+    color: #000333;
+    height: 60px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: rgb(85, 218, 218);
+    margin: 10px;
+    position: fixed;
+    top: 65vh;
+    left: 40vw;
+  }
+  
+  button:active {
+    background-color: #03d1b6;
+  }
+  
+  button:hover, select:hover {
+    border: 2px solid #000333;
+    transform: scale(1.05);
+  }
+#blankmarksheet{
+    font-size: larger;
+    margin: 40px;
+    text-align: center;
+}
+
+
