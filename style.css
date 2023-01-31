@@ -1,92 +1,158 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    background-color: rgb(229, 245, 239);
-    font-family: 'Raleway', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(229, 245, 239);
+  font-family: 'Raleway', sans-serif;
 }
-h1{
-    text-align: center;
+
+.logo {
+  height: 50px;
+  width: 100px;
 }
-#time{
-    position: fixed;
-    left: 75vw;
-    background-color: rgb(186, 252, 230);
-    color: black;
-    font-weight: bolder;
-    font-size: xx-large
+
+h1 {
+  text-align: center;
 }
-#prevresponse{
-    position: fixed;
-    bottom: 15vh;
-    left: 32vw;
-    font-weight: bold;
+
+#time {
+  position: fixed;
+  left: 90vw;
+  background-color: rgb(186, 252, 230);
+  border: 2px solid blue;
+  border-radius: 10px;
+  color: black;
+  font-weight: bolder;
+  font-size: xx-large
 }
-#fixed{
-    position: fixed;
-    left: 15vw;
-    background-color: rgb(186, 252, 230);
-    color: black;
-    font-weight: bolder;
-    font-size: xx-large
+
+#prevresponse {
+  position: fixed;
+  bottom: 15vh;
+  left: 32vw;
+  font-weight: bold;
 }
-.frontpage{
-    display: flex;
-    flex-direction: column;
-    margin: 50px 20px 20px 350px;
-    border: 1px solid rgb(255, 252, 252);
-    border-radius: 15px;
-    box-shadow: 0 25px 100px rgb(192, 190, 190);
-    width: 500px;
-    height: 65vh;
-    padding: 65px;
+
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
-.invisible{
-    display: none;
+
+.frontpage {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(255, 252, 252);
+  border-radius: 15px;
+  box-shadow: 0 25px 100px rgb(192, 190, 190);
+  margin-top: 5vh;
+  width: 60vw;
+  height: 70vh;
+  padding: 65px;
 }
-.visible{
-    display: flex;
-    flex-direction: column;
-    margin: 50px 20px 20px 350px;
-    border: 1px solid rgb(255, 252, 252);
-    border-radius: 15px;
-    box-shadow: 0 25px 100px rgb(192, 190, 190);
-    height: 65vh;
-    width: 500px;
-    padding: 65px;
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: flex;
+  margin-top: 5vh;
+  flex-direction: column;
+  border: 1px solid rgb(255, 252, 252);
+  border-radius: 15px;
+  box-shadow: 0 25px 100px rgb(192, 190, 190);
+  height: 70vh;
+  width: 60vw;
+  padding: 20px;
 }
 
 button {
-    cursor: pointer;
-    font-weight: bold;
-    color: #000333;
-    height: 60px;
-    width: 200px;
-    border-radius: 10px;
-    background-color: rgb(85, 218, 218);
-    margin: 10px;
-    position: fixed;
-    top: 65vh;
-    left: 40vw;
-  }
-  #whos_next{
-    left: 50vw;
-  }
-  #btnsubmit{
-    left: 30vw;
-  }
-  button:active {
-    background-color: #03d1b6;
-  }
-  
-  button:hover, select:hover {
-    border: 2px solid #000333;
-    transform: scale(1.05);
-  }
-#blankmarksheet{
-    font-size: larger;
-    margin: 40px;
-    text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  color: #000333;
+  height: 60px;
+  width: 200px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: rgb(85, 218, 218);
 }
 
+#whos_next {
+  left: 50vw;
+}
 
+#btnsubmit {
+  left: 30vw;
+}
+
+button:active {
+  background-color: #03d1b6;
+}
+
+button:hover,
+select:hover.answerVisible {
+  border: 2px solid #000333;
+  transform: scale(1.05);
+}
+
+.answerInvisible{
+  display: none;
+}
+
+#blankmarksheet {
+  font-size: larger;
+  margin: 40px;
+  text-align: center;
+}
+
+#option1,
+#option2,
+#option3,
+#option4 {
+  display: flex;
+  align-items: center;
+  overflow-wrap: break-word;
+  border: 2px solid rgb(58, 241, 241);
+  height: 12vh;
+  margin: 2px;
+  padding-left: 15px;
+  border-radius: 10px;
+}
+
+#answer {
+  height: 12vh;
+  margin: 2px;
+  padding-left: 15px;
+  border-radius: 10px;
+}
+
+#option1:hover,
+#option2:hover,
+#option3:hover,
+#option4:hover {
+  border: 2px solid rgb(0, 147, 167);
+  cursor: pointer;
+}
+
+#option1:active,
+#option2:active,
+#option3:active,
+#option4:active {
+  border: 3px solid rgb(200, 255, 0);
+}
+
+#question {
+  display: flex;
+  align-items: center;
+  overflow-wrap: break-word;
+  padding-left: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 15px;
+  height: 25vh;
+  border: 2px solid rgb(5, 80, 80);
+  ;
+}
