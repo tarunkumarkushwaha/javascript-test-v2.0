@@ -41,7 +41,7 @@ let questions = [
         option2: "Only one and only Dudh roti",
         option3: "Veg + dudh roti",
         option4: "Aloo paratha",
-        correctresponse: "questions[2].option1",
+        correctresponse: "questions[2].option2",
         time: 2
     }
 ]
