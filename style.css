@@ -69,7 +69,12 @@ button {
     top: 65vh;
     left: 40vw;
   }
-  
+  #whos_next{
+    left: 50vw;
+  }
+  #btnsubmit{
+    left: 30vw;
+  }
   button:active {
     background-color: #03d1b6;
   }
