@@ -8,14 +8,17 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Javascript test</title>
+    <script src="script.js" type="module" defer></script>
 </head>
 
 <body>
     <div class="flex-row-center">
         <div id="frontpage" class="frontpage">
-            <img src="/images/Screenshot 2023-01-26 110942.png" class="mainlogo" alt="javascript tester">
             <div class="flex-row-center">
-                <button class="teststartbutton" onclick="teststartbutton()" type="button">Start test</button>
+                <img src="/images/Screenshot 2023-01-26 110942.png" class="mainlogo" alt="javascript tester">
+            </div>
+            <div class="flex-row-center">
+                <button id="teststartbutton" type="button">Start test</button>
             </div>
             <div id="prevresponse"></div>
         </div>
@@ -36,16 +39,22 @@
             </div>
         </div>
         <div id="resultpage" class="invisible">
-            <img src="/images/Screenshot 2023-01-26 110942.png" class="mainlogo" alt="javascript tester">
+            <div class="flex-row-center">
+                <img src="/images/Screenshot 2023-01-26 110942.png" class="logo" alt="javascript tester">
+            </div>
             <h1>Result page</h1>
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
+            <div id="passPercentage" class="flex-row-center"></div>
+            <div id="Remarks" class="flex-row-center"></div>
             <div id="blankmarksheet"></div>
-            <div class="flex-row-center"><button class="teststartbutton" onclick="retry()" type="button">
+            <div class="flex-row-center"><button id="Retry" type="button">
                     << Retry</button>
             </div>
 
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 
 </html>

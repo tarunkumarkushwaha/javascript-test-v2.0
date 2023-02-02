@@ -11,8 +11,7 @@
   box-shadow: 0px 5px 5px rgba(13, 69, 77, 0.5);
   height: 250px;
   width: 500px;
-  position: relative;
-  left: 155px;
+  margin: 25px;
   border-radius: 25px;
 }
 
@@ -180,7 +179,25 @@ select:hover.answerVisible {
   border: 2px solid rgb(252, 255, 255);
   box-shadow: 0px 5px 5px rgba(13, 69, 77, 0.5);
 }
+#myProgress {
+  width: 93%;
+  margin: 15px;
+  border-radius: 10px;
+  background-color: rgb(219, 248, 246);
+  padding: 10px;
+  border: 3px solid rgb(32, 175, 241);
+}
 
-.wrong {
-  border: 2px solid rgb(255, 0, 0);
+#myBar {
+  width: 1%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #04aa12;
+}
+#Remarks{
+  font-weight: bold;
+  font-size: x-large;
+  text-align: center;
+  margin: 20px;
+  overflow-wrap: break-word;
 }
