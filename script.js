@@ -23,7 +23,7 @@ let optionselection = document.querySelectorAll('#option1, #option2, #option3, #
 // audios 
 let trueSound = new Audio("https://cdn.pixabay.com/download/audio/2022/03/15/audio_b8c9103636.mp3?filename=correct-83487.mp3");
 let falseSound = new Audio("https://cdn.pixabay.com/download/audio/2021/08/04/audio_c6ccf3232f.mp3?filename=negative_beeps-6008.mp3");
-
+let timeover = new Audio("https://cdn.pixabay.com/download/audio/2022/03/10/audio_ad24b5e301.mp3?filename=bell-ringing-43862.mp3")
 // mock questions for testing
 // let questions = [
 //     {
@@ -120,8 +120,8 @@ const resultpagehandler = () => {
     localStorage.setItem("items", JSON.stringify(answerarray))
     time.remove()
     quespage.remove()
-    percentage = (answerarray.length/questions.length) * 100
-    passPercentage.innerHTML = percentage + "%"
+    percentage = (answerarray.length/questions.length) * 100  
+    passPercentage.innerHTML = Number(Math.round(percentage+'e2')+'e-2') + "%"
     if (percentage == 0) {
         new Audio(quotes[0].sound).play()
         Remarks.innerHTML = quotes[0].zero
@@ -144,7 +144,7 @@ const resultpagehandler = () => {
     }
     else if (percentage > 90 && percentage <= 99) {
         new Audio(quotes[5].sound).play()
-        Remarks.innerHTML = quotes[2].per90
+        Remarks.innerHTML = quotes[5].per90
     }
     else {
         new Audio(quotes[6].sound).play()
@@ -171,6 +171,7 @@ const startTimer = (duration, display) => {
 
         if (--timer < 0) {
             timer = duration;
+            timeover.play()
             resultpagehandler()
         }
     }, 1000);
