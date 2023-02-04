@@ -69,8 +69,10 @@ let quotes = [
     }
 ]
 // Preset 
+let growth
 prevresponse.innerHTML = `Previous record- Correct responses - ${JSON.parse(localStorage.getItem('items')) ? JSON.parse(localStorage.getItem('items')).length : 0} 
 and Incorrect responses - ${JSON.parse(localStorage.getItem('items')) ? questions.length - JSON.parse(localStorage.getItem('items')).length : 0}`
+growth=prevresponse.innerHTML
 let answerarray = []
 answer.setAttribute("class", ("answerInvisible"))
 
@@ -90,7 +92,7 @@ let i = 0
 let j = ""
 let percentage
 const whos_next_handler = () => {
-    answer.hasAttribute("answerVisible") ? console.log("gadbad") : answer.setAttribute("class", "answerInvisible")
+    answer.hasAttribute("answerVisible") ? null : answer.setAttribute("class", "answerInvisible")
     optionselection.forEach(optionselection => optionselection.addEventListener('click', getAnswer));
     if (i < questions.length) {
         time.innerHTML = "..wait"
@@ -106,7 +108,7 @@ const whos_next_handler = () => {
     }
 }
 const getAnswer = (e) => {
-    j == e.target.innerHTML ? answerarray.push(true) : console.log("wrong answer");
+    j == e.target.innerHTML ? answerarray.push(true) : null;
     j == e.target.innerHTML ? trueSound.play() : falseSound.play()
     answer.setAttribute("class", "answerVisible")
     optionselection.forEach(optionselection => optionselection.removeEventListener('click', getAnswer));
@@ -117,6 +119,7 @@ const retry = () => {
 
 const resultpagehandler = () => {
     blankmarksheet.innerHTML = `No of correct responses are ${answerarray.length} and incorrect responses are ${questions.length - answerarray.length}`
+    // console.log(parseInt(growth.substring(37, 39)));
     localStorage.setItem("items", JSON.stringify(answerarray))
     time.remove()
     quespage.remove()
