@@ -49,9 +49,7 @@ h1 {
 }
 
 #prevresponse {
-  position: fixed;
-  bottom: 15vh;
-  left: 32vw;
+  margin: 10px;
   font-weight: bold;
 }
 
@@ -179,6 +177,7 @@ select:hover.answerVisible {
   border: 2px solid rgb(252, 255, 255);
   box-shadow: 0px 5px 5px rgba(13, 69, 77, 0.5);
 }
+
 #myProgress {
   width: 93%;
   margin: 15px;
@@ -194,13 +193,15 @@ select:hover.answerVisible {
   border-radius: 10px;
   background-color: #04aa12;
 }
-#Remarks{
+
+#Remarks {
   font-weight: bold;
   font-size: x-large;
   text-align: center;
   margin: 20px;
   overflow-wrap: break-word;
 }
+
 @media only screen and (max-width: 600px) {
   .mainlogo {
     height: 150px;
@@ -208,20 +209,24 @@ select:hover.answerVisible {
     margin: 15px;
     margin-bottom: 80px;
   }
+
   .frontpage {
     width: 47vw;
-    height: 40vh;
+    height: 70vh;
     padding: 70px;
   }
+
   .visible {
     height: 75vh;
     width: 85vw;
     padding: 15px;
   }
+
   #prevresponse {
-    padding-right: 110px;
-    text-align: center;
+    position: relative;
+    top: 12vh;
   }
+
   #time {
     position: fixed;
     left: 71vw;
@@ -229,9 +234,11 @@ select:hover.answerVisible {
     width: 85px;
     bottom: 86vh;
   }
+
   #myProgress {
     margin: 0px;
   }
+
   h1 {
     margin: 5px;
   }
