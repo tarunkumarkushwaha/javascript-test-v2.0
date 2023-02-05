@@ -212,13 +212,11 @@ select:hover.answerVisible {
     width: 47vw;
     height: 40vh;
     padding: 70px;
-    margin-right: 15px;
   }
   .visible {
     height: 75vh;
     width: 85vw;
     padding: 15px;
-    margin-right: 10px;
   }
   #prevresponse {
     padding-right: 110px;
@@ -226,12 +224,15 @@ select:hover.answerVisible {
   }
   #time {
     position: fixed;
-    left: 70vw;
-    height: 70px;
-    width: 100px;
-    bottom: 87vh;
+    left: 71vw;
+    height: 65px;
+    width: 85px;
+    bottom: 86vh;
   }
   #myProgress {
-    margin: 1px;
+    margin: 0px;
+  }
+  h1 {
+    margin: 5px;
   }
 }
