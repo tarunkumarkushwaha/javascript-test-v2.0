@@ -113,9 +113,17 @@ button:active {
 }
 
 button:hover,
-select:hover.answerVisible {
+select:hover{
   border: 2px solid #000333;
   transform: scale(1.05);
+}
+
+.answer-correct{
+  background-color: #64cc6d;
+}
+
+.answer-wrong{
+  background-color: #cc6464;
 }
 
 .answerInvisible {
@@ -124,7 +132,6 @@ select:hover.answerVisible {
 
 #blankmarksheet {
   font-size: larger;
-  margin: 40px;
   text-align: center;
 }
 
@@ -194,6 +201,13 @@ select:hover.answerVisible {
   background-color: #04aa12;
 }
 
+#myBar2 {
+  width: 1%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #e6ff07;
+}
+
 #Remarks {
   font-weight: bold;
   font-size: x-large;
@@ -202,17 +216,33 @@ select:hover.answerVisible {
   overflow-wrap: break-word;
 }
 
+.greendot {
+  height: 25px;
+  width: 25px;
+  background-color: #04aa12;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.yellowdot {
+  height: 25px;
+  width: 25px;
+  background-color: #e6ff07;
+  border-radius: 50%;
+  display: inline-block;
+}
+
 @media only screen and (max-width: 600px) {
   .mainlogo {
     height: 150px;
     width: 300px;
     margin: 15px;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
 
   .frontpage {
     width: 47vw;
-    height: 70vh;
+    height: 60vh;
     padding: 70px;
   }
 

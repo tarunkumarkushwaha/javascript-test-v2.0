@@ -8,7 +8,8 @@ let option2 = document.getElementById('option2')
 let option3 = document.getElementById('option3')
 let option4 = document.getElementById('option4')
 let passPercentage = document.getElementById('passPercentage')
-let answer = document.querySelector('#answer')
+let pastresult = document.getElementById('pastresult')
+let improvement = document.getElementById('improvement')
 let Remarks = document.querySelector('#Remarks')
 let prevresponse = document.querySelector('#prevresponse')
 let blankmarksheet = document.querySelector('#blankmarksheet')
@@ -24,7 +25,9 @@ let optionselection = document.querySelectorAll('#option1, #option2, #option3, #
 let trueSound = new Audio("https://cdn.pixabay.com/download/audio/2022/03/15/audio_b8c9103636.mp3?filename=correct-83487.mp3");
 let falseSound = new Audio("https://cdn.pixabay.com/download/audio/2021/08/04/audio_c6ccf3232f.mp3?filename=negative_beeps-6008.mp3");
 let timeover = new Audio("https://cdn.pixabay.com/download/audio/2022/03/10/audio_ad24b5e301.mp3?filename=bell-ringing-43862.mp3")
+
 // mock questions for testing
+
 // let questions = [
 //     {
 //         question: "1. eval(5+2)",
@@ -38,6 +41,7 @@ let timeover = new Audio("https://cdn.pixabay.com/download/audio/2022/03/10/audi
 // ]
 
 // Remarks 
+
 let quotes = [
     {
         zero: "Once you learn to quit, it becomes a habit, So don't quit",
@@ -69,12 +73,12 @@ let quotes = [
     }
 ]
 // Preset 
-let growth
+
+let prevpercent = localStorage.getItem("percentage")
 prevresponse.innerHTML = `Previous record- Correct responses - ${JSON.parse(localStorage.getItem('items')) ? JSON.parse(localStorage.getItem('items')).length : 0} 
 and Incorrect responses - ${JSON.parse(localStorage.getItem('items')) ? questions.length - JSON.parse(localStorage.getItem('items')).length : 0}`
-growth=prevresponse.innerHTML
+pastresult.innerHTML=`<span class="yellowdot"></span> past performance => ${Number(Math.round(parseInt(prevpercent)+'e2')+'e-2')} %`
 let answerarray = []
-answer.setAttribute("class", ("answerInvisible"))
 
 // buttons 
 const teststart = () => {
@@ -92,7 +96,10 @@ let i = 0
 let j = ""
 let percentage
 const whos_next_handler = () => {
-    answer.hasAttribute("answerVisible") ? null : answer.setAttribute("class", "answerInvisible")
+    option1.removeAttribute('class')
+    option2.removeAttribute('class')
+    option3.removeAttribute('class')
+    option4.removeAttribute('class')
     optionselection.forEach(optionselection => optionselection.addEventListener('click', getAnswer));
     if (i < questions.length) {
         time.innerHTML = "..wait"
@@ -101,7 +108,6 @@ const whos_next_handler = () => {
         option2.innerHTML = questions[i].option2;
         option3.innerHTML = questions[i].option3;
         option4.innerHTML = questions[i].option4;
-        answer.innerHTML = `the correct answer is - ${eval(questions[i].correctresponse)}`
         j = eval(questions[i].correctresponse)
         i++
         if (i == questions.length) { nextbutton.setAttribute("class", "invisible") }
@@ -110,7 +116,7 @@ const whos_next_handler = () => {
 const getAnswer = (e) => {
     j == e.target.innerHTML ? answerarray.push(true) : null;
     j == e.target.innerHTML ? trueSound.play() : falseSound.play()
-    answer.setAttribute("class", "answerVisible")
+    j == e.target.innerHTML ? e.target.setAttribute('class','answer-correct') : e.target.setAttribute('class','answer-wrong') 
     optionselection.forEach(optionselection => optionselection.removeEventListener('click', getAnswer));
 }
 const retry = () => {
@@ -119,12 +125,14 @@ const retry = () => {
 
 const resultpagehandler = () => {
     blankmarksheet.innerHTML = `No of correct responses are ${answerarray.length} and incorrect responses are ${questions.length - answerarray.length}`
-    // console.log(parseInt(growth.substring(37, 39)));
     localStorage.setItem("items", JSON.stringify(answerarray))
     time.remove()
     quespage.remove()
     percentage = (answerarray.length/questions.length) * 100  
-    passPercentage.innerHTML = Number(Math.round(percentage+'e2')+'e-2') + "%"
+    console.log(Number(Math.round(parseInt(prevpercent)+'e2')+'e-2'));
+    localStorage.setItem("percentage",percentage)
+    passPercentage.innerHTML =`<span class="greendot"> </span> Present performance => ${Number(Math.round(percentage+'e2')+'e-2')} %`
+    improvement.innerHTML=`Improvement => ${Number(Math.round((percentage-parseInt(prevpercent))+'e2')+'e-2')} %`
     if (percentage == 0) {
         new Audio(quotes[0].sound).play()
         Remarks.innerHTML = quotes[0].zero
@@ -154,6 +162,7 @@ const resultpagehandler = () => {
         Remarks.innerHTML = quotes[6].per100
     }
     move()
+    move2()
     resultpage.removeAttribute("class", "invisible")
     resultpage.setAttribute("class", "visible")
 }
@@ -203,6 +212,25 @@ function move() {
             if (width >= percentage) {
                 clearInterval(id);
                 k = 0;
+            } else {
+                width++;
+                elem.style.width = width + "%";
+            }
+        }
+    }
+}
+// Bar 2 
+let p = 0;
+function move2() {
+    if (p == 0) {
+        p = 1;
+        var elem = document.getElementById("myBar2");
+        var width = 1;
+        var id = setInterval(frame, 20);
+        function frame() {
+            if (width >= parseInt(prevpercent)) {
+                clearInterval(id);
+                p = 0;
             } else {
                 width++;
                 elem.style.width = width + "%";
