@@ -75,8 +75,7 @@ let quotes = [
 // Preset 
 
 let prevpercent = localStorage.getItem("percentage") ? localStorage.getItem("percentage") : "0"
-prevresponse.innerHTML = `Previous record- Correct responses - ${JSON.parse(localStorage.getItem('items')) ? JSON.parse(localStorage.getItem('items')).length : 0} 
-and Incorrect responses - ${JSON.parse(localStorage.getItem('items')) ? questions.length - JSON.parse(localStorage.getItem('items')).length : 0}`
+prevresponse.innerHTML = `Previous Score - ${JSON.parse(localStorage.getItem('items')) ? JSON.parse(localStorage.getItem('items')).length : 0}/${questions.length}`
 pastresult.innerHTML = `<span class="yellowdot"></span> past performance => ${Number(Math.round(parseInt(prevpercent) + 'e2') + 'e-2')} %`
 let answerarray = []
 
